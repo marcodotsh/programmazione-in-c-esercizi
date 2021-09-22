@@ -5,6 +5,6 @@
 - Struttura generale di un programma (direttive, funzioni e istruzioni);
 - Commenti;
 - Tipi, variabili e assegnamenti;
-- Leggere un input (`scanf()`) e stampare a schermo (`printf()`);
+- Leggere un input `scanf()` e stampare a schermo `printf()`;
 
 ##Esercizi
