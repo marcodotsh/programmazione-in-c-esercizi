@@ -1,2 +1,2 @@
-# programmazione-in-c-esercizi
-Esercizi svolti dal libro Programmazione in C di Kim N. King
+# Programmazione in C - Esercizi
+Esercizi svolti dal libro Programmazione in C di Kim N. King, organizzati per capitoli.
