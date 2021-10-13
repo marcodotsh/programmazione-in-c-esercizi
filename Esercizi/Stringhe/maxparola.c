@@ -5,16 +5,17 @@
 int main(void)
 {
     char str[DIM+1];
-    int i, max, temp_max;
+    int i, max, temp_max, lunghezza;
     max = 0;
     temp_max = 0;
 
     printf("Inserisci frase: ");
     scanf("%[^\n]", str);
 
-    for(i=0;i<(int)(strlen(str)+1);i++)
+	lunghezza = strlen(str) + 1;
+    for(i=0;i<lunghezza;i++)
     {
-        if(str[i]==' ' || str[i]=='\0')
+        if(str[i]==' ' || str[i]=='\0' || str[i]=='.')
         {
             if(temp_max>max)
             {
