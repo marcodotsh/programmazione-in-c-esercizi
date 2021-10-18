@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	int mat[N][N], i, j, temp1, temp2, temp3, temp4;
+	int mat[N][N], i, j, temp;
 
 	for(i=0;i<N;i++)
 	{
@@ -28,15 +28,12 @@ int main(void)
 	{
 		for(j=i;j<N-1-i;j++)
 		{
-			temp1 = mat[i][j];
-			temp2 = mat[N-1-j][i];
-			temp3 = mat[N-1-i][N-1-j];
-			temp4 = mat[j][N-1-i];
+			temp = mat[i][j];
 
-			mat[i][j] = temp4;
-			mat[N-1-j][i] = temp1;
-			mat[N-1-i][N-1-j] = temp2;
-			mat[j][N-1-i] = temp3;
+			mat[i][j] = mat[j][N-1-i];
+			mat[j][N-1-i] = mat[N-1-i][N-1-j];
+			mat[N-1-i][N-1-j] = mat[N-1-j][i];
+			mat[N-1-j][i] = temp;
 		}
 	}
 
