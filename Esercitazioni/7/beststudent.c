@@ -26,7 +26,7 @@ int main(void)
 		do
 		{
 			printf("Inserire nome studente %d: ", i + 1);
-			scanf(" %[^\n]", studenti[i].nome);
+			scanf("%s", studenti[i].nome);
 		}while(strlen(studenti[i].nome)>LEN);
 		do
 		{

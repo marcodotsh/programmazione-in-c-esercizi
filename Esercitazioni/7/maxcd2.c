@@ -4,15 +4,20 @@
 
 typedef struct
 {
+	unsigned ore;
+	unsigned min;
+	unsigned sec;
+} tempo;
+
+typedef struct
+{
 	char titolo[LEN+1];
 	char autore[LEN+1];
-	int annopubb;
-	int ntracce;
-	int ore;
-	int min;
-	int sec;
+	unsigned annopubb;
+	unsigned ntracce;
+	tempo durata;
 	float prezzo;
-	int vendite;
+	unsigned vendite;
 } cd_t;
 
 int main(void)
@@ -37,27 +42,30 @@ int main(void)
 		scanf(" %[^\n]", dischi[i].autore);
 				
 		printf("Inserire anno: ");
-		scanf("%d", &dischi[i].annopubb);
+		scanf("%u", &dischi[i].annopubb);
 
 		printf("Inserire numero tracce: ");
-		scanf("%d", &dischi[i].ntracce);
+		scanf("%u", &dischi[i].ntracce);
 		
-		do
-		{
-			printf("Inserire durata nel formato ore minuti secondi:\n");
-			scanf("%d %d %d", &dischi[i].ore, &dischi[i].min, &dischi[i].sec);
-		}while(dischi[i].min>60 || dischi[i].sec>60);
-
+		printf("Inserire ore: ");
+		scanf("%u", &dischi[i].durata.ore);
+		
+		printf("Inserire minuti: ");
+		scanf("%u", &dischi[i].durata.min);
+		
+		printf("Inserire secondi: ");
+		scanf("%u", &dischi[i].durata.sec);
+		
 		printf("Inserire prezzo: ");
 		scanf("%f", &dischi[i].prezzo);
 
 		printf("Inserire copie vendute: ");
-		scanf("%d", &dischi[i].vendite);
+		scanf("%u", &dischi[i].vendite);
 	}
 
 	for(i=0;i<n;i++)
 	{
-		duratat = ((dischi[i].ore*60)+dischi[i].min)*60+dischi[i].sec;
+		duratat = ((dischi[i].durata.ore*60)+dischi[i].durata.min)*60+dischi[i].durata.sec;
 		if(duratat>duratamax)
 		{	duratamax = duratat;	}
 	}
@@ -65,7 +73,7 @@ int main(void)
 	printf("Dischi con durata massima:\n");
 	for(i=0;i<n;i++)
 	{
-		duratat = ((dischi[i].ore*60)+dischi[i].min)*60+dischi[i].sec;
+		duratat = ((dischi[i].durata.ore*60)+dischi[i].durata.min)*60+dischi[i].durata.sec;
 		if(duratat==duratamax)
 		{
 			printf("Titolo: %s\n", dischi[i].titolo);

@@ -34,19 +34,10 @@ int main(void)
 	return 0;
 }
 
-int mcdf(int x,int y)
+int mcdf(int ris,int div)
 {
-	int ris, div, mod;
-	if(x>y)
-	{
-		ris=x;
-		div=y;
-	}else
-	{
-		ris=y;
-		div=x;
-	}
-
+	int mod;
+	
 	while(div!=0)
 	{
 		mod = ris % div;
