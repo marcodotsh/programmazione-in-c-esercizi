@@ -14,7 +14,7 @@ int main(void)
 	scanf("%s", str);
 	printf("Inserisci chiave di cifratura: ");
 	scanf("%d", &key);
-
+	key = key % ('z'-'a'+1);
 	caesarenc(str, key);
 
 	printf("Stringa criptata: %s\n\n", str);
@@ -38,8 +38,6 @@ void caesardec(char s[], int k)
 {
 	int i;
 	for(i=0;s[i]!='\0';i++) {
-		s[i] = s[i] - k;
-		while(s[i]<'a')
-			s[i]=s[i]+('z'-'a'+1);	
+		s[i] = (('z'-'a'+1)+s[i] - 'a' - k) % ('z' - 'a' + 1) + 'a';
 	}
 }
