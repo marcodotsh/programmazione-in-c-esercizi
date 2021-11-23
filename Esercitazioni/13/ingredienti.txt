@@ -1,3 +1,0 @@
-farina 100
-zucchero 50
-lievito 3
