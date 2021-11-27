@@ -19,6 +19,7 @@ int main(void) {
 			}
 			printf("\n");
 		}
+		free(mat);
 	}
 	else
 		printf("Errore allocazione memoria\n");
